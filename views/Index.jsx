@@ -6,7 +6,7 @@ class Index extends React.Component{
         return (
             <Layout>
                 <h1>This is my projects page</h1>
-                {/* <ul> 
+                <ul> 
                     {
                     this.props.projects.map((project) => {
                         return (
@@ -16,7 +16,7 @@ class Index extends React.Component{
                             )
                         })
                     }
-                </ul> */}
+                </ul>
             </Layout>
         )
     }

@@ -6,7 +6,7 @@ class Aboutu extends React.Component{
         return (
             <Layout>
                 <h1>Tell me something about you</h1>
-                {/* <ul> 
+                <ul> 
                     {
                     this.props.comments.map((comment) => {
                         return (
@@ -16,7 +16,7 @@ class Aboutu extends React.Component{
                             )
                         })
                     }
-                </ul> */}
+                </ul>
             </Layout>
         )
     }

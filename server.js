@@ -13,7 +13,7 @@ const show = console.log;
 show('KEEP CALM AND SHOW TRUST');
 const Project = require('./models/projects.js');
 const Comment = require('./models/comments.js');
-const { findById } = require('./models/projects.js');
+const { findById } = require('./models/comments.js');
 
 //___________________
 //Port
@@ -111,8 +111,35 @@ app.get('/comments/new', (req, res) => {
 // DESTROY/DELETE
 // UPDATE
 // CREATE
+app.post('/comments/', (req, res) => {
+    Comment.create(req.body, (err, createdComment) => {
+        !err ? res.redirect('/comments') : res.send(err);
+    })
+})
 // EDIT
+app.get('/comments/:id/edit', (req, res) => {
+    Comment.findById(req.params.id, (err, foundComment) => {
+        if(!err) {
+            res.render('Edit', {
+                comment: foundComment
+            })
+        } else {
+            res.send(err);
+        }
+    })
+})
 // SHOW
+app.get('/comments/:id', (req, res) => {
+    Comment.findById(req.params.id, (err, foundComment) => {
+        if(!err) {
+            res.render('Aboutu', {
+                comment: foundComment
+            })
+        } else {
+            res.send(err);
+        }
+    })
+})
 //___________________
 //Listener
 //___________________
