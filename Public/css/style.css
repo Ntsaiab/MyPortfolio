@@ -1,0 +1,29 @@
+* {
+    background-color: #ffffb5;
+    border: #B3B36D;
+}
+
+li {
+    list-style: none;
+    background-color: #CFEBFF;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
+
+#name{
+    background-color: #b37776;
+}
+#profile-photo {
+    background-image: url("/Public/profilephoto.jpg");
+    background-color: #ff9d9c;
+}
+
+main {
+    background-color: #B3B36D;
+}
+
+footer.ul.li {
+    margin-bottom: 0;
+    background-color: lightgreen;
+}
