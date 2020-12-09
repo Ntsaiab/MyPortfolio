@@ -103,7 +103,16 @@ app.get('/comments', (req, res) => {
         }
     })
 })
+// NEW
+app.get('/comments/new', (req, res) => {
+    res.render('New');
+})
 
+// DESTROY/DELETE
+// UPDATE
+// CREATE
+// EDIT
+// SHOW
 //___________________
 //Listener
 //___________________
