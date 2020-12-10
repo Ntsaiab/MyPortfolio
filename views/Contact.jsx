@@ -5,7 +5,8 @@ class Contact extends React.Component{
     render() {
         return (
             <Layout>
-                <h1>My Contact Info</h1>
+                <h2>Contact Info</h2>
+                <h1>ntsaiab2009@gmail.com</h1>
                 
             </Layout>
         )

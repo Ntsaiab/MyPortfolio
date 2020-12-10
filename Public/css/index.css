@@ -1,0 +1,14 @@
+* {
+    /* background-color: #ffffb5; */
+    /* border: 1px solid #b37776; */
+    box-sizing: border-box;
+}
+input {
+    background-color: #b37776;
+}
+.index {
+    background-color: none;
+}
+h1 {
+    color: purple;
+}

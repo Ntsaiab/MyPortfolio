@@ -6,6 +6,7 @@ class Travels extends React.Component{
         return (
             <Layout>
                 <h1>Enjoy the Adventure</h1>
+                <h2>Under Construction...pictures coming soon</h2>
                 
             </Layout>
         )

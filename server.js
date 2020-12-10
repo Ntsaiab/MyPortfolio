@@ -13,7 +13,7 @@ const show = console.log;
 show('KEEP CALM AND SHOW TRUST');
 const Project = require('./models/projects.js');
 const Comment = require('./models/comments.js');
-const { findById } = require('./models/comments.js');
+const { findById } = require('./models/projects.js');
 
 //___________________
 //Port
@@ -103,43 +103,67 @@ app.get('/comments', (req, res) => {
         }
     })
 })
+
 // NEW
-app.get('/comments/new', (req, res) => {
+app.get('/projects/new', (req, res) => {
     res.render('New');
 })
 
 // DESTROY/DELETE
-// UPDATE
-// CREATE
-app.post('/comments/', (req, res) => {
-    Comment.create(req.body, (err, createdComment) => {
-        !err ? res.redirect('/comments') : res.send(err);
+app.delete('/projects/:id', (req, res) => {
+    Project.findByIdAndRemove(req.params.id, (err, foundProject) => {
+        if(!err) {
+            res.redirect('/projects')
+        } else {
+            res.send(err);
+        }
     })
 })
+
+// UPDATE
+app.put('/projects/:id', (req, res) => {
+    Project.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedProject) => {
+        if(!err) {
+            res.redirect('/Projects');
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+// CREATE
+app.post('/projects/', (req, res) => {
+    Project.create(req.body, (err, createdProject) => {
+        !err ? res.redirect('/projects') : res.send(err);
+    })
+})
+
 // EDIT
-app.get('/comments/:id/edit', (req, res) => {
-    Comment.findById(req.params.id, (err, foundComment) => {
+app.get('/projects/:id/edit', (req, res) => {
+    Project.findById(req.params.id, (err, foundProject) => {
         if(!err) {
             res.render('Edit', {
-                comment: foundComment
+                project: foundProject
             })
         } else {
             res.send(err);
         }
     })
 })
+
 // SHOW
-app.get('/comments/:id', (req, res) => {
-    Comment.findById(req.params.id, (err, foundComment) => {
+app.get('/projects/:id', (req, res) => {
+    Project.findById(req.params.id, (err, foundProject) => {
         if(!err) {
-            res.render('Aboutu', {
-                comment: foundComment
+            res.render('Show', {
+                project: foundProject
             })
         } else {
             res.send(err);
         }
     })
 })
+
 //___________________
 //Listener
 //___________________

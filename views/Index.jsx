@@ -4,14 +4,18 @@ const Layout = require('./Layout/Layout.jsx');
 class Index extends React.Component{
     render() {
         return (
-            <Layout>
-                <h1>This is my projects page</h1>
+            <Layout
+            stylesheet="/css/index.css">
+                <h1>Projects page</h1>
                 <ul> 
                     {
                     this.props.projects.map((project) => {
                         return (
-                            <li>
-                                <h1>This is my first {project.name}</h1>
+                            <li class="index">
+                                <h1><a href={`/projects/${project._id}`}>{project.name} Click To See More</a></h1>
+                                <form method="POST" action={`/projects/${project._id}?_method=DELETE`}>
+                                    <input type="submit" value={`DELETE ${project.name.toUpperCase()}`}/>
+                                </form>
                             </li>
                             )
                         })

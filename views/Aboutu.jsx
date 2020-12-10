@@ -11,6 +11,8 @@ class Aboutu extends React.Component{
                     this.props.comments.map((comment) => {
                         return (
                             <li>
+                                <h1>Be Right Back</h1>
+                                <h1>Got looped into searching for this "While" one that got away</h1>
                                 <h1>This is my first {comment.name}</h1>
                             </li>
                             )

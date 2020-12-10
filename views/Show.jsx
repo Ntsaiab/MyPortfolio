@@ -3,13 +3,18 @@ const Layout = require('./Layout/Layout.jsx');
 
 class Show extends React.Component{
     render() {
+        const project = this.props.project;
         return (
-            <Layout>
-                <h1>About Me</h1>
-                <p> {this.props.comment.name} comment</p>
-                <a href={'/'}>Go Back Home</a><br/>
-                <a href={'/comments/new'}>Create a New comment</a><br/>
-                <a href={`/comments/${this.props.comment._id}/edit`}>{`Edit ${this.props.comment.name}`}</a>
+            <Layout
+            stylesheet="/css/show.css">
+                <p> Name: {project.name} project</p>
+                <p> Link: {project.link}</p>
+                <p> Screenshot: <img src={project.screenshot} alt={project.name}/>Logo</p>
+                <p> Description: {project.description}</p>
+
+  
+               <p><a href={'/projects/new'}>New project</a></p>
+                <p><a href={`/projects/${project._id}/edit`}>{`Edit ${project.name}`}</a></p>
             </Layout>
         )
     }
