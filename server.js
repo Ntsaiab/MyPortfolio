@@ -68,8 +68,9 @@ app.engine('jsx', require('express-react-views').createEngine());
 //___________________
 //localhost:3000 
 app.get('/', (req, res) => {
-    res.send('/Public/index.html');
+    res.send('./Public/index.html');
 })
+
 app.get('/about', (req, res) => {
   res.render('About');
 });
